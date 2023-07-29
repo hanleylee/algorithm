@@ -80,11 +80,13 @@ private class Solution {
 class TestSolution0206: XCTestCase {
     func test1() {
         let head = ListNode.create(with: [1, 2, 3, 4, 5])
-        dump(Solution().reverseList(head))
+        let reverseHead = Solution().reverseList(head)
+        XCTAssertEqual(reverseHead?.description, "[5, 4, 3, 2, 1]")
     }
 
     func test2() {
         let head = ListNode.create(with: [1, 2, 3, 4, 5])
-        dump(Solution().reverseList2(head))
+        let reverseHead = Solution().reverseList2(head)
+        XCTAssertEqual(reverseHead?.description, "[5, 4, 3, 2, 1]")
     }
 }
