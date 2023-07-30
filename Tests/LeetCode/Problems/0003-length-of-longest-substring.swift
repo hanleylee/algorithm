@@ -42,17 +42,8 @@ import XCTest
 
 final class lengthOfLongestSubstringTest: XCTestCase {
     func lengthOfLongestSubstring(_ s: String) -> Int {
-        var tempStr = ""
+        var s = Array.init(s)
         var res = 0
-
-        s.forEach { s in
-            if let firstIndex = tempStr.firstIndex(of: s) {
-                let distance = tempStr.distance(from: tempStr.startIndex, to: firstIndex)
-                tempStr.removeSubrange(tempStr.startIndex ... tempStr.index(tempStr.startIndex, offsetBy: distance))
-            }
-            tempStr.append(s)
-            res = max(res, tempStr.count)
-        }
 
         return res
     }

@@ -41,10 +41,26 @@ import XCTest
 
 private class Solution {
     func maxSubArray(_ nums: [Int]) -> Int {
-        return 0
+        var maxVal = Int.min
+        var preSum = 0
+
+        for num in nums {
+            let curSum = preSum + num
+            maxVal = curSum > num ? max(curSum, maxVal) : max(num, maxVal)
+            preSum = max(curSum, num)
+        }
+        return maxVal
     }
 }
 
 class TestSolution0053: XCTestCase {
-    func test1() {}
+    func test1() {
+        let res = Solution().maxSubArray([-1, 1, -3, 4, -1, 2, 1, -5, 4])
+        XCTAssertEqual(res, 6)
+    }
+
+    func test2() {
+        let res = Solution().maxSubArray([-1, -2])
+        XCTAssertEqual(res, -1)
+    }
 }
