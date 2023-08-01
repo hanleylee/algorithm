@@ -24,5 +24,10 @@ let package = Package(
             dependencies: ["CSAlgorithm"],
             path: "Tests"
         ),
+        .testTarget(
+            name: "LeetCodeTests",
+            dependencies: ["CSAlgorithm"],
+            path: "LeetCode"
+        ),
     ]
 )

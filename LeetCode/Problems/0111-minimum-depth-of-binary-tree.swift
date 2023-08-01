@@ -41,26 +41,29 @@ private typealias TreeNode = CSAlgorithm.BinaryTreeNode<Int>
 
 private class Solution {
     func minDepth(_ root: TreeNode?) -> Int {
-        var queue: [TreeNode] = []
-        if let root = root {
-            root.val = 1
-            queue.append(root)
-        }
+        var res = 0
+        guard let root = root else { return res }
+
+        var queue: [TreeNode] = [root]
 
         while !queue.isEmpty {
-            let node = queue.removeFirst()
-            if node.left == nil && node.right == nil {
-                return node.val
-            }
+            res += 1
 
-            if let leftNode = node.left {
-                leftNode.val = node.val + 1
-                queue.append(leftNode)
-            }
+            let count = queue.count
 
-            if let rightNode = node.right {
-                rightNode.val = node.val + 1
-                queue.append(rightNode)
+            for _ in 0 ..< count {
+                let node = queue.removeFirst()
+                if node.left == nil && node.right == nil {
+                    return res
+                }
+
+                if let left = node.left {
+                    queue.append(left)
+                }
+
+                if let right = node.right {
+                    queue.append(right)
+                }
             }
         }
 
