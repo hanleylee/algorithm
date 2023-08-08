@@ -41,32 +41,24 @@ import XCTest
 
 private class Solution {
     func maxAbsoluteSum(_ nums: [Int]) -> Int {
-        var dp: [Int] = Array(repeating: Int.min, count: nums.count)
+        // 分别求出子数组和的最大值与子数组和的最小值
+        var negativeMin = 0
+        var negativeSum = 0
 
-        /// 之前的合(可能为正或负)
-        var preSumRaw: Int = 0
+        var positiveMax = 0
+        var positiveSum = 0
 
-        for (index, num) in nums.enumerated() {
-            let preSumABS = index > 0 ? dp[index - 1] : 0
-            let currentSum: Int
-            if (preSumRaw < 0 && num < 0) || (preSumRaw > 0 && num > 0) {
-                currentSum = preSumABS + abs(num)
-            } else {
-                currentSum = abs(preSumABS - abs(num))
-            }
+        for num in nums {
+            negativeSum += num
+            negativeMin = min(negativeMin, negativeSum)
+            negativeSum = min(0, negativeSum)
 
-            let currentMax: Int
-            if abs(num) >= currentSum {
-                preSumRaw = num
-                currentMax = abs(num)
-            } else {
-                preSumRaw += num
-                currentMax = currentSum
-            }
-            dp[index] = currentMax
+            positiveSum += num
+            positiveMax = max(positiveMax, positiveSum)
+            positiveSum = max(0, positiveSum)
         }
 
-        return dp.max()!
+        return max(positiveMax, -negativeMin)
     }
 }
 
