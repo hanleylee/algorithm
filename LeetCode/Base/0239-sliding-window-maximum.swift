@@ -122,7 +122,7 @@ private class Solution {
             }
             //! 2. 队尾 小于当前元素，出队
             while !windows.isEmpty, nums[windows.last!] <= x {
-                windows.popLast()
+                _ = windows.popLast()
             }
             //! 3.添加当前元素入队
             windows.append(i)

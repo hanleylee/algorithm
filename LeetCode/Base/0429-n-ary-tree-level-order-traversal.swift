@@ -59,7 +59,7 @@ private class Solution {
 
         while !queue.isEmpty {
             var level: [Int] = []
-            var count = queue.count
+            let count = queue.count
 
             for _ in 0 ..< count {
                 let node = queue.removeFirst()

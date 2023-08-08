@@ -50,7 +50,7 @@ private class Solution {
             default:
                 let paired = dic[char]
                 if stack.last == paired {
-                    stack.popLast()
+                    _ = stack.popLast()
                 } else {
                     return false
                 }

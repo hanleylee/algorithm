@@ -61,8 +61,8 @@ private class MinStack {
     }
 
     func pop() {
-        valueArr.popLast()
-        minArr.popLast()
+        _ = valueArr.popLast()
+        _ = minArr.popLast()
     }
 
     func top() -> Int {

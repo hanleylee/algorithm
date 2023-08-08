@@ -60,7 +60,7 @@ import XCTest
 
 private class Solution {
     func pivotIndex(_ nums: [Int]) -> Int {
-        var sum = nums.reduce(0, +)
+        let sum = nums.reduce(0, +)
         var leftSum = 0
         for i in 0 ..< nums.count {
             if leftSum * 2 + nums[i] == sum {
@@ -75,19 +75,19 @@ private class Solution {
 
 class TestSolution0724: XCTestCase {
     func test1() {
-        var nums = [1, 7, 3, 6, 5, 6]
+        let nums = [1, 7, 3, 6, 5, 6]
         let res = Solution().pivotIndex(nums)
         XCTAssertEqual(res, 3)
     }
 
     func test2() {
-        var nums = [1, 2, 3]
+        let nums = [1, 2, 3]
         let res = Solution().pivotIndex(nums)
         XCTAssertEqual(res, -1)
     }
 
     func test3() {
-        var nums = [2, 1, -1]
+        let nums = [2, 1, -1]
         let res = Solution().pivotIndex(nums)
         XCTAssertEqual(res, 0)
     }

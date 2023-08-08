@@ -37,7 +37,7 @@ import XCTest
 
 private class Solution {
     func advantageCount(_ nums1: [Int], _ nums2: [Int]) -> [Int] {
-        var n1 = nums1.sorted(by: <)
+        let n1 = nums1.sorted(by: <)
         let n2 = nums2.sorted(by: <)
 
         var indexDic: [Int: Int] = [:]

@@ -1,4 +1,3 @@
-import CSAlgorithm
 import Foundation
 
 public class Dijkstra {

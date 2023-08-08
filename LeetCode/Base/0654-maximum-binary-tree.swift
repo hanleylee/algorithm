@@ -80,6 +80,6 @@ private class Solution {
 
 class TestSolution0654: XCTestCase {
     func test1() {
-        Solution().constructMaximumBinaryTree([3, 2, 1, 6, 0, 5])
+        _ = Solution().constructMaximumBinaryTree([3, 2, 1, 6, 0, 5])
     }
 }

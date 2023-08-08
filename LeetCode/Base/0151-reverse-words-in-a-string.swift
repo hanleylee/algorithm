@@ -57,7 +57,7 @@ private class Solution {
         if let begin = s.firstIndex(where: { $0 != " " }), let end = s.lastIndex(where: { $0 != " " }) {
             parts = s[begin ... end]
         }
-        var partArr = Array(parts)
+        let partArr = Array(parts)
 
         for i in 1 ..< parts.count {
             if partArr[i] != " " && partArr[i - 1] == " " { // begin of word

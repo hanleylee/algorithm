@@ -39,7 +39,6 @@ import XCTest
 
 private class Solution {
     func isAnagram(_ s: String, _ t: String) -> Bool {
-        let sArr = Array(s)
         var res: [Int] = Array(repeating: 0, count: 26)
         let aAscii = Character("a").asciiValue!
 

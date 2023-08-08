@@ -68,7 +68,7 @@ private class Solution {
         var queue: [Node] = [root]
 
         while !queue.isEmpty {
-            var count = queue.count
+            let count = queue.count
             var previous: Node!
             var current: Node!
 

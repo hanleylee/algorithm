@@ -68,7 +68,7 @@ private class Solution {
 
 class TestSolution0022: XCTestCase {
     func test1() {
-        var res = Solution().generateParenthesis(3)
+        let res = Solution().generateParenthesis(3)
         XCTAssertEqual(res.sorted(), ["((()))","(()())","(())()","()(())","()()()"].sorted())
     }
 }
