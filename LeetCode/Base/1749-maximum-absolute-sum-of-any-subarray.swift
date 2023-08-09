@@ -64,14 +64,14 @@ private class Solution {
 
 class TestSolution1749: XCTestCase {
     func test1() {
-        print(Solution().maxAbsoluteSum([1, -3, 2, 3, -4]))
+        XCTAssertEqual(Solution().maxAbsoluteSum([1, -3, 2, 3, -4]), 5)
     }
 
     func test2() {
-        print(Solution().maxAbsoluteSum([2,-5,1,-4,3,-2]))
+        XCTAssertEqual(Solution().maxAbsoluteSum([2,-5,1,-4,3,-2]), 8)
     }
 
     func test3() {
-        print(Solution().maxAbsoluteSum([-7,-1,0,-2,1,3,8,-2,-6,-1,-10,-6,-6,8,-4,-9,-4,1,4,-9]))
+        XCTAssertEqual(Solution().maxAbsoluteSum([-7,-1,0,-2,1,3,8,-2,-6,-1,-10,-6,-6,8,-4,-9,-4,1,4,-9]), 44)
     }
 }
