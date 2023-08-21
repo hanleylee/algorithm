@@ -46,7 +46,7 @@
 
 import XCTest
 
-private class MinStack {
+private class MinStack1 {
     // 存放最小值
     private var minArr: [Int] = []
     // 存放元素
@@ -74,14 +74,56 @@ private class MinStack {
     }
 }
 
-/**
- * Your MinStack object will be instantiated and called as such:
- * let obj = MinStack()
- * obj.push(val)
- * obj.pop()
- * let ret_3: Int = obj.top()
- * let ret_4: Int = obj.getMin()
- */
+private class MinStack2 {
+    class Node {
+        var val: Int = 0
+        var min: Int = Int.max
+        var next: Node?
+    }
+
+    var head: Node?
+
+    init() {}
+
+
+    func push(_ val: Int) {
+        if let head = head {
+            let node = Node()
+            node.val = val
+            node.next = head
+            node.min = min(val, head.min)
+            self.head = node
+        } else {
+            let node = Node()
+            node.val = val
+            node.min = val
+            head = node
+        }
+
+    }
+
+    func pop() {
+        head = head?.next
+    }
+
+    func top() -> Int {
+        if let head = head {
+            return head.val
+        } else {
+            fatalError()
+        }
+
+    }
+
+    func getMin() -> Int {
+        if let head = head {
+            return head.min
+        } else {
+            fatalError()
+        }
+    }
+}
+
 
 class TestSolution0155: XCTestCase {
     func test1() {}
