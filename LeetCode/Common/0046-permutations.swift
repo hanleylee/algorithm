@@ -36,10 +36,8 @@ import XCTest
 
 private class Solution {
     private var res: [[Int]] = []
-    private var maxCount: Int = 0
 
     func permute(_ nums: [Int]) -> [[Int]] {
-        maxCount = nums.count
 
         dfs(combo: [], remains: nums)
 
